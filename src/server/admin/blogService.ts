@@ -64,7 +64,7 @@ export const updateBlog = async ({blogId, data}: {blogId: string, data: { title:
 
     revalidatePath("/admin/settings")
 
-    if (blog?.slug !== data.slug) redirect({ href: `/${data.slug}`, locale: intl.defaultLocale }){
+    if (blog?.slug !== data.slug) {
         redirect({ href: `/${blog?.slug}/admin/settings`, locale: intl.defaultLocale })
     }
 }

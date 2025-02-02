@@ -5,7 +5,9 @@ export const hasPermission = ({blogUsers, userId, roles = ["OWNER"]}: {
     userId: string,
     roles: BlogUser["role"][]
 }) => {
- blogUsers.some((item) => {
+ const hasPermission = blogUsers.some((item) => {
     return item.userId === userId && roles.includes(item.role)
   })
+  
+  return hasPermission
 }  

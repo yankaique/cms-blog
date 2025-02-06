@@ -17,7 +17,7 @@ export const LocaleDropdown = () => {
                 items: intl.localeList.map((item) => ({
                     key: item.locale,
                     label: <Link href={pathname} locale={item.locale}>{item.label}</Link>,
-                    icon: <Image src={`/imgs/${item.locale}.png`} width={23} height={23} alt={`${item.locale}`} />
+                    icon: <Image src={`/imgs/${item.locale}.svg`} width={23} height={23} alt={`${item.locale}`} />
                 })),
                 defaultSelectedKeys: [locale],
             }}
@@ -33,7 +33,7 @@ export const LocaleDropdown = () => {
                 cursor-pointer
                 gap-4
             ">
-                <Image src={`/imgs/${locale}.png`} width={23} height={23} alt={`${locale}`} />
+                <Image src={`/imgs/${locale}.svg`} width={23} height={23} alt={`${locale}`} />
                 <CaretDownFilled classID="text-slate-600"/>
             </Space>
         </Dropdown>

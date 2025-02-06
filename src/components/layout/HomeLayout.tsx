@@ -46,3 +46,5 @@ const HomeLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </Layout>
     )
 }
+
+export default HomeLayout;

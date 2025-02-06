@@ -49,13 +49,13 @@ export const SignIn = () => {
         <div className="border space-y-7 border-slate-100 dark:border-zinc-800 p-6 shadow w-full max-w-md rounded-lg">
             <Spin spinning={loading}>
                 <Form layout="vertical" onFinish={onFinish}>
-                    <Form.Item label={formTranslation("email_label")} name="email" rules={[{ required: true }]} required>
+                    <Form.Item label={formTranslation("email_label")} name="email" rules={[{ required: true, max: 120 }]} required>
                         <Input placeholder={"Ex: test@email.com"} />
-                        <Form.Item className="pt-2">
-                            <Button type="primary" htmlType="submit" block>
-                                {formTranslation("btn_label", {provider: 'email'})}
-                            </Button>
-                        </Form.Item>
+                    </Form.Item>
+                    <Form.Item className="pt-2">
+                        <Button type="primary" htmlType="submit" block>
+                            {formTranslation("btn_label", {provider: 'email'})}
+                        </Button>
                     </Form.Item>
                 </Form>
                 <Divider plain>{commonTranslation("or")}</Divider>

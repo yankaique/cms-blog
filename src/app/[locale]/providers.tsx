@@ -17,7 +17,7 @@ export const Providers = ({children}: {children: React.ReactNode}) => {
 
     useEffect(() => {
         getSavedTheme()
-    })
+    },[])
 
     return (
         <StyleProvider layer>

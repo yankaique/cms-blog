@@ -8,9 +8,13 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
     const session = await auth();
     if (!session?.user) redirect({ href: "/auth/signin", locale: intl.defaultLocale })
     return (
-        <SessionProvider session={session}>
-            <HomeLayout>{children}</HomeLayout>
-        </SessionProvider>
+        <html lang={intl.defaultLocale}>
+            <body>          
+                <SessionProvider session={session}>
+                    <HomeLayout>{children}</HomeLayout>
+                </SessionProvider>
+            </body>
+        </html>
     );
 };
 

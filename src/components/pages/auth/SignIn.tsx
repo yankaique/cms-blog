@@ -54,18 +54,18 @@ export const SignIn = () => {
                     </Form.Item>
                     <Form.Item className="pt-2">
                         <Button type="primary" htmlType="submit" block>
-                            {formTranslation("btn_label", {provider: 'email'})}
+                            {signInTranslation("btn_label", {provider: 'email'})}
                         </Button>
                     </Form.Item>
                 </Form>
                 <Divider plain>{commonTranslation("or")}</Divider>
                 <Space className="w-full" direction="vertical" size={16}>
                     <Button block onClick={() => handleSignInProvider('google')} className="font-semibold py-[17px]">
-                        {formTranslation("btn_label", {provider: 'google'})}
+                        {signInTranslation("btn_label", {provider: 'google'})}
                         <Image src={GoogleIcon}  alt="google" width={18} />
                     </Button>
                     <Button block onClick={() => handleSignInProvider('facebook')} className="font-semibold py-[17px]">
-                        {formTranslation("btn_label", {provider: 'facebook'})}
+                        {signInTranslation("btn_label", {provider: 'facebook'})}
                         <Image src={FacebookIcon} alt="facebook" width={18} />
                     </Button>
                     <p className="mt-7 text-center">

@@ -5,7 +5,8 @@ export type PostWithUser = Prisma.PostGetPayload<{
         user: {
             select: {
                 id: true,
-                name: true
+                name: true,
+                email: true
             }
         }
     }

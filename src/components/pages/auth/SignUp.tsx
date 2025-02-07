@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -8,7 +7,7 @@ import { Button, Divider, Form, FormProps, Input, message, Space, Spin } from "a
 import { signIn as signInProvider } from "next-auth/react";
 import GoogleIcon from "@/assets/imgs/google-icon.svg"
 import FacebookIcon from "@/assets/imgs/facebook-icon.svg"
-import { signUp } from "@/server/authService";
+import { signUp as signUpService } from "@/server/authService";
 import { Link } from "@/lib/navigation";
 
 type FieldType = {
@@ -27,7 +26,7 @@ export const SignUp = () => {
 
     const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
         setLoading(true)
-        const createdSignUp = await signUp({
+        const createdSignUp = await signUpService({
             data: { name: values.name, email: values.email }
         })
         setLoading(false)
@@ -58,23 +57,23 @@ export const SignUp = () => {
                     </Form.Item>
                     <Form.Item className="pt-2">
                         <Button type="primary" htmlType="submit" block>
-                            {formTranslation("btn_label", {provider: 'email', max: 120})}
+                            {signUpTranslation("btn_label", {provider: 'email', max: 120})}
                         </Button>
                     </Form.Item>
                 </Form>
                 <Divider plain>{commonTranslation("or")}</Divider>
                 <Space className="w-full" direction="vertical" size={16}>
                     <Button block onClick={() => handleSignInProvider('google')} className="font-semibold py-[17px]">
-                        {formTranslation("btn_label", {provider: 'google'})}
+                        {signUpTranslation("btn_label", {provider: 'google'})}
                         <Image src={GoogleIcon}  alt="google" width={18} />
                     </Button>
                     <Button block onClick={() => handleSignInProvider('facebook')} className="font-semibold py-[17px]">
-                        {formTranslation("btn_label", {provider: 'facebook'})}
+                        {signUpTranslation("btn_label", {provider: 'facebook'})}
                         <Image src={FacebookIcon} alt="facebook" width={18} />
                     </Button>
                     <p className="mt-7 text-center">
                         {signUpTranslation("already_have_account")}
-                        <Link href="/sign-up" className="text-blue-500 ml-1">
+                        <Link href="/auth/signin" className="text-blue-500 ml-1">
                             {signUpTranslation("btn_have_account_label")}
                         </Link>
                     </p>

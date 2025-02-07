@@ -13,7 +13,7 @@ export const VerifyEmail = () => {
             status="info" 
             icon={<InfoCircleOutlined style={{ color: colorPrimary }} />} 
             title={translation("title")}
-            subTitle={translation("sub_title")}
+            subTitle={translation("subtitle")}
             className="max-w-3xl"
             extra={
                 <Link href="/auth/signin">

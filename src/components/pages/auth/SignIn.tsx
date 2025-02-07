@@ -70,7 +70,7 @@ export const SignIn = () => {
                     </Button>
                     <p className="mt-7 text-center">
                         {signInTranslation("no_account")}
-                        <Link href="/sign-up" className="text-blue-500 ml-1">
+                        <Link href="/auth/signup" className="text-blue-500 ml-1">
                             {signInTranslation("btn_no_account_label")}
                         </Link>
                     </p>

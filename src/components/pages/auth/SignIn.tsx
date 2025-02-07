@@ -8,7 +8,7 @@ import { Button, Divider, Form, FormProps, Input, message, Space, Spin } from "a
 import { signIn as signInProvider } from "next-auth/react";
 import GoogleIcon from "@/assets/imgs/google-icon.svg"
 import FacebookIcon from "@/assets/imgs/facebook-icon.svg"
-import { signIn } from "@/server/authService";
+import { signIn as signInService } from "@/server/authService";
 import { Link } from "@/lib/navigation";
 
 type FieldType = {
@@ -26,7 +26,7 @@ export const SignIn = () => {
 
     const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
         setLoading(true)
-        const createdSignIn = await signIn({
+        const createdSignIn = await signInService({
             data: { email: values.email }
         })
         setLoading(false)

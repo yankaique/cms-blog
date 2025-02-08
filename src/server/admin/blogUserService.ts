@@ -60,7 +60,7 @@ export const createBlogUser = async ({ data }: {data: {email: string, blogId: st
     revalidatePath('/admin/users')
 }
 
-export const updateBlogUser = async ({ blogUserId, data }: {blogUserId: string, data: {role: BlogUser["role"]}}) => {
+export const updateBlogUserRole = async ({ blogUserId, data }: {blogUserId: string, data: {role: BlogUser["role"]}}) => {
     await prisma.blogUser.update({
         where: {
             id: blogUserId

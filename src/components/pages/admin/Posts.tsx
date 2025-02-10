@@ -55,10 +55,10 @@ export const PostPage = ({posts}: Props) => {
             title: formTranslation("author_label"),
             dataIndex: ['user', 'name'],
             key: 'user.name',
-            sorter: (a, b) => a.user.name.localeCompare(b.user.name),
+            sorter: (a, b) => a.user.name!.localeCompare(b.user.name!),
             sortDirections: ['descend', 'ascend'],
             ellipsis: true,
-            render: (_: any, record: PostWithUser) => (
+            render: (_, record: PostWithUser) => (
                 <Space>
                     <Tag color="blue">{record.user.name}</Tag>
                     <Tag color="gold">{record.user.email}</Tag>
